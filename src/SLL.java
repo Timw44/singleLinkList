@@ -48,6 +48,19 @@ public class SLL
         return count;
     }
 
+    public void setData(int oldData, int updateData)
+    {
+        Node position = head;
+        while ( position != null)
+        {
+            if (position.getData() == oldData)
+            {
+                position.setData(updateData);
+            }
+            position = position.getLink();
+        }
+    }
+
     public void showList()
     {
         Node position = head;
@@ -77,6 +90,11 @@ public class SLL
         public Node getLink()
         {
             return link;
+        }
+
+        public void setData(int data)
+        {
+            this.data = data;
         }
 
         public String toString()
